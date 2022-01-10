@@ -67,6 +67,12 @@
     <ProjectReference Include="..\..\..\..\System.Windows.Forms.Analyzers.CSharp\src\System.Windows.Forms.Analyzers.CSharp.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="EPIC">
+      <HintPath>..\..\..\..\..\..\..\Users\v-dandrianov\source\repos\EPIC\EPIC\bin\Debug\net6.0-windows\EPIC.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Import Project="..\..\..\..\..\pkg\Microsoft.Private.Winforms\sdk\dotnet-wpf\System.Windows.Forms.Analyzers.props" />
 
 </Project>

@@ -25,7 +25,7 @@ namespace System.Windows.Forms
     [Docking(DockingBehavior.AutoDock)]
     [Designer("System.Windows.Forms.Design.SplitContainerDesigner, " + AssemblyRef.SystemDesign)]
     [SRDescription(nameof(SR.DescriptionSplitContainer))]
-    public class SplitContainer : ContainerControl, ISupportInitialize
+    public partial class SplitContainer : ContainerControl, ISupportInitialize
     {
         // Constants used during split container movement
         private const int DrawStart = 1;
@@ -2354,6 +2354,8 @@ namespace System.Windows.Forms
                 SetInnerMostBorder(this);
             }
         }
+
+        internal override bool SupportsUiaProviders => true;
 
         /// <summary>
         ///  Processes a dialog key. Overrides Control.processDialogKey(). This
