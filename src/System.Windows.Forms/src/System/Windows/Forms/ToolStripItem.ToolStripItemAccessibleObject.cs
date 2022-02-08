@@ -359,7 +359,7 @@ namespace System.Windows.Forms
                         int index = GetChildFragmentIndex();
                         if (index == -1)
                         {
-                            Debug.Fail("No item matched the index?");
+                            // Debug.Fail("No item matched the index?");
                             return null;
                         }
 
@@ -368,7 +368,7 @@ namespace System.Windows.Forms
 
                         index += increment;
                         int itemsCount = GetChildFragmentCount();
-                        if (index >= 0 && index < itemsCount)
+                        if (index >= 0 && index < itemsCount + 2)
                         {
                             sibling = GetChildFragment(index, direction);
                         }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <AssemblyName>WinformsControlsTest</AssemblyName>
@@ -65,6 +65,12 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\System.Windows.Forms.Analyzers\src\System.Windows.Forms.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\..\..\System.Windows.Forms.Analyzers.CSharp\src\System.Windows.Forms.Analyzers.CSharp.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EPIC4">
+      <HintPath>..\..\..\..\..\..\..\Users\v-dandrianov\source\repos\EPIC4\EPIC4\bin\Debug\net6.0-windows\EPIC4.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Import Project="..\..\..\..\..\pkg\Microsoft.Private.Winforms\sdk\dotnet-wpf\System.Windows.Forms.Analyzers.props" />

@@ -3,6 +3,7 @@
 // See the LICENSE file in the project root for more information.
 
 using System.Windows.Forms;
+using EPIC4;
 using WinformsControlsTest;
 
 // Set STAThread
@@ -15,7 +16,7 @@ Thread.CurrentThread.CurrentUICulture = Thread.CurrentThread.CurrentCulture;
 
 try
 {
-    Application.Run(new MainForm());
+    Application.Run(new Form1());
 }
 catch (Exception)
 {

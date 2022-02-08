@@ -174,13 +174,25 @@ namespace System.Windows.Forms
                     return _owningToolStrip.OverflowButton.AccessibilityObject;
                 }
 
-                if (fragmentIndex < items.Count)
+                ToolStripDropDownMenu? menu = _owningToolStrip as ToolStripDropDownMenu;
+
+                if (fragmentIndex == 0 && menu?.UpScrollButton.Visible == true)
                 {
-                    ToolStripItem item = items[fragmentIndex];
+                    return menu.UpScrollButton.Label.AccessibilityObject;
+                }
+
+                if (fragmentIndex < items.Count + 1)
+                {
+                    ToolStripItem item = items[fragmentIndex - 1];
                     if (item.Available && item.Alignment == ToolStripItemAlignment.Left)
                     {
                         return GetItemAccessibleObject(item);
                     }
+                }
+
+                if (fragmentIndex == _owningToolStrip.Items.Count && menu?.DownScrollButton.Visible == true)
+                {
+                    return menu.DownScrollButton.Label.AccessibilityObject;
                 }
 
                 List<ToolStripItem> orderedItems = new();
@@ -296,7 +308,14 @@ namespace System.Windows.Forms
                     return -1;
                 }
 
-                return _owningToolStrip.DisplayedItems.Count;
+                if (_owningToolStrip.Items.Count != _owningToolStrip.DisplayedItems.Count)
+                {
+                    return _owningToolStrip.DisplayedItems.Count + 2;
+                }
+                else
+                {
+                    return _owningToolStrip.DisplayedItems.Count;
+                }
             }
 
             internal int GetChildFragmentIndex(ToolStripItem.ToolStripItemAccessibleObject child)
